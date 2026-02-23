@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phygital Solution — Мастер-файл логотипів 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=Barlow+Condensed:wght@300;600;700;900&family=Familjen+Grotesk:wght@300;400;700;800&family=Cabinet+Grotesk:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --Y: #E9FE03;
+  --D: #2E2E2E;
+  --W: #FFFFFF;
+  --M: #8A8A8A;
+  --BG: #E2E2DE;
+  --SEP: #BEBEBА;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{background:var(--BG);font-family:'DM Mono',monospace;color:var(--D)}
+
+/* ══ COVER ══════════════════════════════════════════════════ */
+.cover{
+  background:var(--D);
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:72px 80px;
+  border-bottom:6px solid var(--Y);
+  position:relative;overflow:hidden;
+}
+.cover-dots{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle, rgba(233,254,3,.18) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.cover-gridlines{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(233,254,3,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(233,254,3,.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
+.c-kicker{font-size:9px;color:var(--Y);letter-spacing:.26em;text-transform:uppercase;opacity:.7}
+.c-date{font-size:9px;color:#3A3A3A;letter-spacing:.2em}
+.cover-mid{position:relative;z-index:1;display:flex;flex-direction:column;gap:20px}
+.c-label{font-size:10px;color:#444;letter-spacing:.22em;text-transform:uppercase}
+.c-title{
+  font-family:'Unbounded',sans-serif;
+  font-size:clamp(56px,8vw,104px);font-weight:900;
+  color:var(--W);letter-spacing:-.04em;line-height:.86;
+}
+.c-title em{color:var(--Y);font-style:normal;display:block}
+.c-desc{font-size:11px;color:#444;letter-spacing:.14em;line-height:2;max-width:520px}
+.cover-bot{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1}
+.c-count{
+  font-family:'Unbounded',sans-serif;
+  font-size:120px;font-weight:900;
+  color:var(--Y);opacity:.08;line-height:1;letter-spacing:-.06em;
+}
+.c-meta{text-align:right}
+.c-meta p{font-size:9px;color:#3A3A3A;letter-spacing:.16em;line-height:2.2;text-transform:uppercase}
+
+/* ══ SECTION HEADER ══════════════════════════════════════════ */
+.sh{
+  background:var(--D);
+  padding:28px 80px;
+  display:flex;align-items:center;gap:20px;
+  border-top:4px solid var(--Y);
+}
+.sh::before{content:'';width:28px;height:3px;background:var(--Y);flex-shrink:0}
+.sh-title{
+  font-family:'Unbounded',sans-serif;
+  font-size:9px;font-weight:400;
+  color:var(--Y);letter-spacing:.24em;text-transform:uppercase;
+}
+.sh-sub{font-size:9px;color:#3A3A3A;letter-spacing:.14em;margin-left:auto}
+
+/* ══ GRID LAYOUTS ════════════════════════════════════════════ */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--SEP);padding:3px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;background:var(--SEP);padding:3px}
+.span2{grid-column:1/-1}
+
+/* ══ CELL ════════════════════════════════════════════════════ */
+.cell{
+  background:var(--W);
+  padding:52px 56px 44px;
+  display:flex;flex-direction:column;gap:32px;
+  position:relative;overflow:hidden;
+}
+.cell.dk{background:var(--D)}
+.cell.yl{background:var(--Y)}
+.cell.sf{background:#F4F4F1}
+
+.meta{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.num{font-size:9px;color:#D0D0CC;letter-spacing:.18em;flex-shrink:0}
+.cell.dk .num{color:#333}
+.cell.yl .num{color:rgba(0,0,0,.2)}
+.cname{font-size:8.5px;color:#C8C8C4;letter-spacing:.16em;text-transform:uppercase;text-align:right;line-height:1.8}
+.cell.dk .cname{color:#333}
+.cell.yl .cname{color:rgba(0,0,0,.2)}
+
+.stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:150px}
+
+.desc{
+  border-top:1px solid #EBEBEB;padding-top:18px;
+  font-size:10px;color:#ADADAA;line-height:1.95;letter-spacing:.01em;
+}
+.cell.dk .desc{border-color:#333;color:#3F3F3F}
+.cell.yl .desc{border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.4)}
+.cell.sf .desc{border-color:#E5E5E2}
+.desc b{color:var(--D);font-weight:600}
+.cell.dk .desc b{color:#666}
+.cell.yl .desc b{color:var(--D)}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 1: MARK + WORDMARK  (01–06)
+══════════════════════════════════════════════════════════ */
+
+/* 01 — Box mark + Syne */
+.l01{display:flex;align-items:center;gap:22px}
+.l01-box{
+  width:62px;height:62px;background:var(--D);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.l01-bi{width:28px;height:28px;border:3.5px solid var(--Y);position:relative}
+.l01-bi::after{content:'';position:absolute;inset:6px;background:var(--Y)}
+.l01-tx{display:flex;flex-direction:column}
+.l01-n{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--D);letter-spacing:-.03em;line-height:1}
+.l01-s{font-family:'DM Mono',monospace;font-size:10px;color:var(--M);letter-spacing:.28em;text-transform:uppercase;margin-top:5px}
+
+/* 02 — Isometric cube + Unbounded */
+.l02{display:flex;align-items:center;gap:22px}
+.l02-cube{width:68px;height:68px;flex-shrink:0}
+.l02-cube svg{width:68px;height:68px;display:block}
+.l02-tx{display:flex;flex-direction:column}
+.l02-n{font-family:'Unbounded',sans-serif;font-size:28px;font-weight:700;color:var(--D);letter-spacing:-.025em;line-height:1}
+.l02-s{font-family:'DM Mono',monospace;font-size:9px;color:var(--M);letter-spacing:.28em;text-transform:uppercase;margin-top:8px}
+
+/* 03 — P monogram */
+.l03{display:flex;align-items:center;gap:18px}
+.l03-mark{width:66px;height:66px;background:var(--Y);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.l03-p{font-family:'Unbounded',sans-serif;font-size:34px;font-weight:900;color:var(--D);line-height:1}
+.l03-tx{display:flex;flex-direction:column}
+.l03-n{font-family:'Unbounded',sans-serif;font-size:21px;font-weight:700;color:var(--D);letter-spacing:-.01em;line-height:1}
+.l03-s{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:300;color:var(--M);margin-top:4px}
+
+/* 04 — Geometric intersection */
+.l04{display:flex;align-items:center;gap:22px}
+.l04-mark{width:72px;height:72px;flex-shrink:0}
+.l04-mark svg{width:72px;height:72px;display:block}
+.l04-tx{display:flex;flex-direction:column}
+.l04-n{font-family:'Familjen Grotesk',sans-serif;font-size:30px;font-weight:800;color:var(--D);letter-spacing:-.03em;line-height:1}
+.l04-s{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--M);letter-spacing:.22em;text-transform:uppercase;margin-top:7px}
+
+/* 05 — Nested squares dark */
+.l05{display:flex;align-items:center;gap:24px}
+.l05-badge{width:80px;height:80px;background:var(--D);position:relative;flex-shrink:0}
+.l05-sq{position:absolute;border:2.5px solid var(--Y)}
+.l05-sq1{inset:0}.l05-sq2{inset:13px}.l05-sq3{inset:26px;background:var(--Y);border:none}
+.l05-tx{display:flex;flex-direction:column}
+.l05-n{font-family:'Familjen Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--W);letter-spacing:-.02em;line-height:1}
+.l05-ne{color:var(--Y)}
+.l05-s{font-family:'Familjen Grotesk',sans-serif;font-size:18px;font-weight:400;color:#555;margin-top:3px}
+.l05-tag{font-family:'DM Mono',monospace;font-size:8px;color:#3A3A3A;letter-spacing:.2em;text-transform:uppercase;margin-top:7px}
+
+/* 06 — NEW concept: diagonal slash mark */
+.l06{display:flex;align-items:center;gap:20px}
+.l06-mark{width:70px;height:70px;flex-shrink:0;position:relative}
+.l06-mark svg{width:70px;height:70px;display:block}
+.l06-tx{display:flex;flex-direction:column}
+.l06-n{font-family:'Cabinet Grotesk',sans-serif;font-size:32px;font-weight:900;color:var(--D);letter-spacing:-.03em;line-height:1}
+.l06-s{font-family:'Cabinet Grotesk',sans-serif;font-size:32px;font-weight:300;color:var(--M);letter-spacing:-.02em;line-height:1;margin-top:2px}
+.l06-tag{font-family:'DM Mono',monospace;font-size:9px;color:#CCC;letter-spacing:.2em;text-transform:uppercase;margin-top:6px}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 2: TYPOGRAPHIC WORDMARKS  (07–10)
+══════════════════════════════════════════════════════════ */
+
+/* 07 — Split PHY|GITAL — FIXED: Solution integrated */
+.l07{display:flex;flex-direction:column;gap:0;align-items:flex-start}
+.l07-row1{display:flex;align-items:stretch}
+.l07-phy{
+  font-family:'Unbounded',sans-serif;font-size:40px;font-weight:900;
+  color:var(--D);letter-spacing:-.04em;background:var(--Y);
+  padding:10px 16px 8px;line-height:1;
+}
+.l07-gital{
+  font-family:'Unbounded',sans-serif;font-size:40px;font-weight:900;
+  color:var(--W);letter-spacing:-.04em;background:var(--D);
+  padding:10px 16px 8px;line-height:1;
+}
+.l07-sol{
+  font-family:'Unbounded',sans-serif;font-size:40px;font-weight:300;
+  color:var(--D);letter-spacing:-.03em;line-height:1;
+  border-bottom:4px solid var(--Y);
+  padding-bottom:4px;
+  width:100%;
+  text-align:right;
+}
+
+/* 08 — Stacked bold */
+.l08{display:flex;flex-direction:column;gap:0}
+.l08-l1{font-family:'Syne',sans-serif;font-size:54px;font-weight:800;color:var(--D);letter-spacing:-.04em;line-height:.88}
+.l08-l2{
+  font-family:'Syne',sans-serif;font-size:54px;font-weight:800;
+  color:var(--Y);-webkit-text-stroke:2.5px var(--D);paint-order:stroke fill;
+  letter-spacing:-.04em;line-height:.88;
+}
+.l08-tag{font-family:'DM Mono',monospace;font-size:9px;color:#C0C0BC;letter-spacing:.22em;text-transform:uppercase;margin-top:10px}
+
+/* 09 — Stacked lemon line */
+.l09{display:flex;flex-direction:column;gap:0}
+.l09-l1{font-family:'Unbounded',sans-serif;font-size:48px;font-weight:900;color:var(--D);letter-spacing:-.04em;line-height:.88}
+.l09-bar{height:6px;background:var(--Y);margin:10px 0 8px}
+.l09-l2{font-family:'Unbounded',sans-serif;font-size:48px;font-weight:300;color:var(--M);letter-spacing:-.04em;line-height:.88}
+
+/* 10 — Barlow condensed cube + SOLUTION accent */
+.l10{display:flex;align-items:center;gap:22px}
+.l10-cube{width:70px;height:70px;flex-shrink:0}
+.l10-cube svg{width:70px;height:70px;display:block}
+.l10-tx{display:flex;flex-direction:column}
+.l10-n{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:52px;font-weight:900;
+  color:var(--D);letter-spacing:.01em;line-height:.88;text-transform:uppercase;
+}
+.l10-s{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:36px;font-weight:700;
+  color:var(--Y);-webkit-text-stroke:1.5px var(--D);paint-order:stroke fill;
+  letter-spacing:.02em;line-height:1;text-transform:uppercase;margin-top:3px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 3: BOX INSIDE WORD  (11–13)
+══════════════════════════════════════════════════════════ */
+
+/* 11 — Y=box FIXED: Y letter visible inside box */
+.l11{display:flex;flex-direction:column;gap:8px}
+.l11-row{display:flex;align-items:center;gap:0;line-height:1}
+.l11-lt{
+  font-family:'Unbounded',sans-serif;font-size:52px;font-weight:900;
+  color:var(--D);letter-spacing:-.04em;line-height:1;
+}
+.l11-ybox{
+  width:54px;height:54px;
+  background:var(--Y);
+  border:3.5px solid var(--D);
+  display:inline-flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin:0 1px;
+  position:relative;
+}
+/* Y letter inside box */
+.l11-yletter{
+  font-family:'Unbounded',sans-serif;
+  font-size:28px;font-weight:900;
+  color:var(--D);line-height:1;
+  position:relative;z-index:1;
+}
+.l11-sol{
+  font-family:'Unbounded',sans-serif;font-size:30px;font-weight:700;
+  color:var(--D);letter-spacing:-.02em;line-height:1;
+}
+
+/* 12 — O=box in SOLUTION */
+.l12{display:flex;flex-direction:column;gap:4px}
+.l12-top{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--M);letter-spacing:.16em;text-transform:uppercase}
+.l12-row{display:flex;align-items:center;gap:0}
+.l12-lt{font-family:'Syne',sans-serif;font-size:58px;font-weight:800;color:var(--D);letter-spacing:-.03em;line-height:.9}
+.l12-obox{
+  width:52px;height:52px;background:var(--Y);border:4px solid var(--D);
+  flex-shrink:0;margin:0 2px;position:relative;top:3px;
+}
+.l12-deco{display:flex;gap:6px;margin-top:8px;align-items:center}
+.l12-dline{height:3px;background:var(--Y);flex:1}
+.l12-ddot{width:8px;height:8px;background:var(--D);border-radius:50%;flex-shrink:0}
+
+/* 13 — P monogram + Physical×Digital text */
+.l13{display:flex;align-items:center;gap:0}
+.l13-pblock{
+  width:70px;height:70px;background:var(--D);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.l13-pletter{font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:var(--Y);line-height:1}
+.l13-tx{display:flex;flex-direction:column;margin-left:3px;border-left:3px solid var(--Y);padding-left:14px}
+.l13-top{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:var(--D);letter-spacing:-.01em;line-height:1}
+.l13-bot{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:300;color:var(--M);letter-spacing:.01em;margin-top:2px}
+.l13-sol{font-family:'DM Mono',monospace;font-size:9px;color:var(--M);letter-spacing:.24em;text-transform:uppercase;margin-top:7px}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 4: MATRIX / GRID DIGITAL  (14–16)
+══════════════════════════════════════════════════════════ */
+
+/* 14 — Grid light */
+.l14-wrap{position:relative;padding:28px 36px;display:inline-block;min-width:320px}
+.l14-gridbg{
+  position:absolute;inset:0;
+  display:grid;grid-template-columns:repeat(14,1fr);grid-template-rows:repeat(7,1fr);
+  pointer-events:none;
+}
+.l14-gc{border:.5px solid rgba(0,0,0,.08)}
+.l14-gc.lit{background:var(--Y);opacity:.8}
+.l14-content{position:relative;z-index:1;display:flex;flex-direction:column;gap:4px}
+.l14-ph{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:400;color:var(--D);letter-spacing:-.01em;line-height:1}
+.l14-sol{font-family:'Unbounded',sans-serif;font-size:38px;font-weight:900;color:var(--D);letter-spacing:-.03em;line-height:1}
+.l14-sol span{color:var(--Y)}
+.l14-tag{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--M);letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+
+/* 15 — Grid dark version */
+.l15-wrap{
+  position:relative;background:var(--D);
+  padding:32px 38px;display:inline-block;min-width:320px;overflow:hidden;
+}
+.l15-gridbg{
+  position:absolute;inset:0;
+  display:grid;grid-template-columns:repeat(14,1fr);grid-template-rows:repeat(7,1fr);
+  pointer-events:none;
+}
+.l15-gc{border:.5px solid rgba(233,254,3,.08)}
+.l15-gc.lit{background:rgba(233,254,3,.15)}
+.l15-content{position:relative;z-index:1;display:flex;flex-direction:column;gap:4px}
+.l15-ph{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:400;color:#AAAAAA;letter-spacing:-.01em;line-height:1}
+.l15-sol{font-family:'Unbounded',sans-serif;font-size:38px;font-weight:900;color:var(--W);letter-spacing:-.03em;line-height:1}
+.l15-sol span{color:var(--Y)}
+.l15-tag{font-family:'DM Mono',monospace;font-size:8.5px;color:#888;letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+
+/* 16 — Dark grid code */
+.l16-wrap{position:relative;background:var(--D);padding:32px 36px;min-width:340px;overflow:hidden}
+.l16-gridlines{position:absolute;inset:0;pointer-events:none}
+.l16-hl,.l16-vl{position:absolute;background:var(--Y);opacity:.07}
+.l16-hl{height:1px;left:0;right:0}
+.l16-vl{width:1px;top:0;bottom:0}
+.l16-content{position:relative;z-index:1;display:flex;flex-direction:column;gap:7px}
+.l16-comment{font-family:'DM Mono',monospace;font-size:10px;color:var(--Y);opacity:.5;letter-spacing:.08em}
+.l16-name{font-family:'Unbounded',sans-serif;font-size:30px;font-weight:900;color:var(--W);letter-spacing:-.02em;line-height:1}
+.l16-name span{color:var(--Y)}
+.l16-div{height:2px;background:var(--Y);width:52px;margin:4px 0}
+.l16-sol{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:300;color:#888;letter-spacing:.08em}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 5: BRAND SYSTEM
+══════════════════════════════════════════════════════════ */
+.sys-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%}
+.sys-var{display:flex;flex-direction:column;gap:16px}
+.sys-label{font-family:'DM Mono',monospace;font-size:8.5px;color:#C0C0BC;letter-spacing:.2em;text-transform:uppercase}
+
+/* A light */
+.sa{display:flex;align-items:center;gap:14px}
+.sa-box{width:54px;height:54px;background:var(--Y);position:relative;flex-shrink:0}
+.sa-box::before{content:'';position:absolute;inset:9px;border:2.5px solid var(--D)}
+.sa-box::after{content:'';position:absolute;inset:19px;background:var(--D)}
+.sa-n{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--D);letter-spacing:-.02em;line-height:1}
+.sa-s{font-family:'DM Mono',monospace;font-size:8px;color:var(--M);letter-spacing:.22em;text-transform:uppercase;margin-top:4px}
+
+/* B dark */
+.sb{background:var(--D);padding:18px 22px;display:inline-flex;align-items:center;gap:14px}
+.sb-box{width:42px;height:42px;background:var(--Y);position:relative;flex-shrink:0}
+.sb-box::before{content:'';position:absolute;inset:7px;border:2px solid var(--D)}
+.sb-box::after{content:'';position:absolute;inset:15px;background:var(--D)}
+.sb-n{font-family:'Unbounded',sans-serif;font-size:17px;font-weight:700;color:var(--W);letter-spacing:-.02em;line-height:1}
+.sb-s{font-family:'DM Mono',monospace;font-size:7.5px;color:#555;letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
+
+/* C favicon */
+.sc{display:flex;align-items:center;gap:14px}
+.sc-icon{width:60px;height:60px;background:var(--D);position:relative}
+.sc-icon::before{content:'';position:absolute;inset:9px;background:var(--Y)}
+.sc-icon::after{content:'';position:absolute;inset:18px;background:var(--D);z-index:1}
+.sc-dot{position:absolute;inset:26px;background:var(--Y);z-index:2}
+.sc-lbl{font-family:'DM Mono',monospace;font-size:10px;color:#C0C0BC;line-height:2}
+
+/* Premium dark cube */
+.spd{display:flex;flex-direction:column;gap:14px}
+.spd-top{display:flex;align-items:center;gap:16px}
+.spd-cube{width:54px;height:54px;flex-shrink:0}
+.spd-cube svg{width:54px;height:54px;display:block}
+.spd-names{display:flex;flex-direction:column}
+.spd-n{font-family:'Unbounded',sans-serif;font-size:28px;font-weight:700;color:var(--W);letter-spacing:-.025em;line-height:1}
+.spd-s{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:300;color:var(--Y);margin-top:3px}
+.spd-div{height:1px;background:linear-gradient(90deg,var(--Y),transparent)}
+.spd-tag{font-family:'DM Mono',monospace;font-size:9.5px;color:#666;letter-spacing:.16em;text-transform:uppercase}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION 6: GEOMETRIC GRID LOGOS (10 variants)
+══════════════════════════════════════════════════════════ */
+
+/* G01 — Dot grid behind wordmark */
+.g01-wrap{position:relative;display:inline-flex;flex-direction:column;gap:4px;padding:20px 24px}
+.g01-dots{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(46,46,46,.18) 1.5px,transparent 1.5px);
+  background-size:16px 16px;
+}
+.g01-c{position:relative;z-index:1;display:flex;flex-direction:column;gap:3px}
+.g01-n{font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:var(--D);letter-spacing:-.03em;line-height:.9}
+.g01-s{font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:var(--Y);-webkit-text-stroke:2px var(--D);paint-order:stroke fill;letter-spacing:-.03em;line-height:.9}
+
+/* G02 — Triangle grid / Trig mesh */
+.g02-wrap{position:relative;padding:20px 24px;display:inline-block}
+.g02-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.15}
+.g02-c{position:relative;z-index:1;display:flex;flex-direction:column;gap:0}
+.g02-n{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--D);letter-spacing:-.035em;line-height:.88}
+.g02-s{font-family:'Syne',sans-serif;font-size:22px;font-weight:300;color:var(--M);letter-spacing:.04em}
+.g02-bar{height:4px;background:var(--Y);width:60%;margin:8px 0 0}
+
+/* G03 — Hexagonal grid cells */
+.g03-wrap{position:relative;overflow:hidden;display:inline-block}
+.g03-hex{position:absolute;inset:0;pointer-events:none;opacity:.08}
+.g03-c{position:relative;z-index:1;padding:24px 28px;display:flex;align-items:center;gap:16px}
+.g03-mark{width:48px;height:48px;background:var(--D);display:flex;align-items:center;justify-content:center;flex-shrink:0;clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%)}
+.g03-mp{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:var(--Y);line-height:1}
+.g03-tx{display:flex;flex-direction:column}
+.g03-n{font-family:'Unbounded',sans-serif;font-size:24px;font-weight:700;color:var(--D);letter-spacing:-.02em;line-height:1}
+.g03-s{font-family:'DM Mono',monospace;font-size:9px;color:var(--M);letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+
+/* G04 — Cross/plus grid pattern */
+.g04-wrap{position:relative;padding:20px 28px;display:inline-block;overflow:hidden}
+.g04-crosses{position:absolute;inset:0;pointer-events:none}
+.g04-c{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
+.g04-n{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:900;color:var(--D);letter-spacing:.01em;line-height:.88;text-transform:uppercase}
+.g04-s{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:300;color:var(--Y);-webkit-text-stroke:1.5px var(--D);paint-order:stroke fill;letter-spacing:.04em;text-transform:uppercase}
+
+/* G05 — Diagonal hatching */
+.g05-wrap{position:relative;overflow:hidden;padding:22px 28px;background:var(--D);display:inline-block}
+.g05-hatch{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(
+    45deg,
+    rgba(233,254,3,.06) 0px,rgba(233,254,3,.06) 1px,
+    transparent 1px,transparent 12px
+  );
+}
+.g05-c{position:relative;z-index:1;display:flex;flex-direction:column;gap:6px}
+.g05-tag{font-family:'DM Mono',monospace;font-size:9px;color:rgba(233,254,3,.4);letter-spacing:.2em}
+.g05-n{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:var(--W);letter-spacing:-.025em;line-height:1}
+.g05-s{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:var(--Y);letter-spacing:-.025em;line-height:1}
+.g05-sub{font-family:'DM Mono',monospace;font-size:8.5px;color:#444;letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+
+/* G06 — Concentric squares grid */
+.g06-wrap{display:flex;align-items:center;gap:20px}
+.g06-mark{width:80px;height:80px;position:relative;flex-shrink:0}
+.g06-mark svg{width:80px;height:80px;display:block}
+.g06-tx{display:flex;flex-direction:column}
+.g06-n{font-family:'Familjen Grotesk',sans-serif;font-size:32px;font-weight:800;color:var(--D);letter-spacing:-.03em;line-height:1}
+.g06-s{font-family:'Familjen Grotesk',sans-serif;font-size:32px;font-weight:300;color:var(--M);letter-spacing:-.02em;line-height:1}
+
+
+
+/* G08 — Circuit board lines */
+.g08-wrap{position:relative;overflow:hidden;display:inline-block}
+.g08-circuit{position:absolute;inset:0;pointer-events:none}
+.g08-c{position:relative;z-index:1;padding:22px 28px;display:flex;flex-direction:column;gap:5px}
+.g08-kicker{font-family:'DM Mono',monospace;font-size:9px;color:var(--Y);letter-spacing:.2em;opacity:.6}
+.g08-n{font-family:'Unbounded',sans-serif;font-size:30px;font-weight:900;color:var(--D);letter-spacing:-.025em;line-height:1}
+.g08-bar{width:48px;height:3px;background:var(--Y);margin:4px 0}
+.g08-s{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:300;color:var(--M);letter-spacing:.02em}
+
+/* G09 — Isometric grid floor */
+.g09-wrap{position:relative;overflow:hidden;padding:20px 28px;background:var(--Y);display:inline-block}
+.g09-iso{position:absolute;inset:0;pointer-events:none;opacity:.2}
+.g09-c{position:relative;z-index:1;display:flex;align-items:center;gap:14px}
+.g09-box{width:52px;height:52px;background:var(--D);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.g09-bp{font-family:'Unbounded',sans-serif;font-size:26px;font-weight:900;color:var(--Y);line-height:1}
+.g09-tx{display:flex;flex-direction:column}
+.g09-n{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:700;color:var(--D);letter-spacing:-.02em;line-height:1}
+.g09-s{font-family:'DM Mono',monospace;font-size:8.5px;color:rgba(0,0,0,.5);letter-spacing:.22em;text-transform:uppercase;margin-top:5px}
+
+/* G10 — Waveform / Signal grid */
+.g10-wrap{display:flex;align-items:center;gap:22px}
+.g10-mark{width:80px;height:80px;flex-shrink:0;position:relative;background:var(--D)}
+.g10-mark svg{width:80px;height:80px;display:block}
+.g10-tx{display:flex;flex-direction:column}
+.g10-n{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--W);letter-spacing:-.03em;line-height:1}
+.g10-s{font-family:'Syne',sans-serif;font-size:18px;font-weight:300;color:var(--Y);margin-top:4px}
+.g10-tag{font-family:'DM Mono',monospace;font-size:8.5px;color:#3A3A3A;letter-spacing:.2em;text-transform:uppercase;margin-top:6px}
+
+/* ══ PALETTE ═══════════════════════════════════════════════ */
+.palette{background:var(--D);padding:56px 80px;border-top:4px solid var(--Y)}
+.pal-title{font-size:9px;color:#444;letter-spacing:.22em;text-transform:uppercase;margin-bottom:36px}
+.pal-row{display:flex;gap:3px;margin-bottom:40px}
+.sw{flex:1;display:flex;flex-direction:column;gap:14px}
+.sw-c{height:80px}
+.sw-name{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--W);letter-spacing:-.01em}
+.sw-hex{font-family:'DM Mono',monospace;font-size:10px;color:#555;letter-spacing:.12em;margin-top:2px}
+.sw-use{font-family:'DM Mono',monospace;font-size:9px;color:#3A3A3A;letter-spacing:.1em;line-height:1.8}
+
+/* ══ FOOTER ══════════════════════════════════════════════ */
+.footer{
+  background:var(--D);border-top:1px solid #222;
+  padding:26px 80px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.ft{font-size:9px;color:#333;letter-spacing:.16em;text-transform:uppercase}
+
+/* ══ 15 Light variant ═══════════════════════════════════ */
+.l16w-wrap{position:relative;background:var(--W);padding:32px 36px;min-width:340px;overflow:hidden;border:1px solid #EBEBEB}
+.l16w-gridlines{position:absolute;inset:0;pointer-events:none}
+.l16w-hl,.l16w-vl{position:absolute;background:var(--Y);opacity:.35}
+.l16w-hl{height:1px;left:0;right:0}
+.l16w-vl{width:1px;top:0;bottom:0}
+.l16w-content{position:relative;z-index:1;display:flex;flex-direction:column;gap:7px}
+.l16w-comment{font-family:'DM Mono',monospace;font-size:10px;color:var(--D);opacity:.35;letter-spacing:.08em}
+.l16w-name{font-family:'Unbounded',sans-serif;font-size:30px;font-weight:900;color:var(--D);letter-spacing:-.02em;line-height:1}
+.l16w-name span{color:var(--D);-webkit-text-stroke:0;border-bottom:3px solid var(--Y);padding-bottom:1px}
+.l16w-div{height:3px;background:var(--Y);width:52px;margin:4px 0}
+.l16w-sol{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:300;color:var(--M);letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<!-- ████████ COVER ████████ -->
+<div class="cover">
+  <div class="cover-dots"></div>
+  <div class="cover-gridlines"></div>
+  <div class="cover-top">
+    <div class="c-kicker">Мастер-файл · Концепції логотипу · 2026</div>
+    <div class="c-date">Фінальна версія · Flat SVG · Web-first</div>
+  </div>
+  <div class="cover-mid">
+    <div class="c-label">Бренд-айдентика · Логотип</div>
+    <div class="c-title">Phygital<em>Solution.</em></div>
+    <div class="c-desc">
+      Інтерактивні рішення для заходів будь-якого формату<br>
+      Технологія · Унікальний досвід · Готове рішення в коробці<br>
+      Кольори: #E9FE03 Lemon · #2E2E2E Dark
+    </div>
+  </div>
+  <div class="cover-bot">
+    <div class="c-count">25</div>
+    <div class="c-meta">
+      <p>25 концепцій логотипу</p>
+      <p>6 тематичних розділів</p>
+      <p>Flat · SVG-native · Web-ready</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ████████ SECTION 1: MARK + WORDMARK ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 1 — Символ + Wordmark</div>
+  <div class="sh-sub">Знак + назва · Класична структура логотипу</div>
+</div>
+<div class="g2">
+
+  <!-- 01 Box+Wordmark -->
+  <div class="cell">
+    <div class="meta"><span class="num">01</span><span class="cname">Box + Wordmark · Syne<br>Темна коробка з лимонним акцентом</span></div>
+    <div class="stage">
+      <div class="l01">
+        <div class="l01-box"><div class="l01-bi"></div></div>
+        <div class="l01-tx">
+          <div class="l01-n">Phygital</div>
+          <div class="l01-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Темна квадратна коробка з лимонним квадратом усередині — "готовий продукт в упаковці". Syne Bold підкреслює технологічність. Мінімалістичний, масштабується від favicon до білборду без втрати читабельності.</div>
+  </div>
+
+  <!-- 02 Isometric cube -->
+  <div class="cell">
+    <div class="meta"><span class="num">02</span><span class="cname">Isometric Cube · Unbounded<br>Плаский SVG · Три грані</span></div>
+    <div class="stage">
+      <div class="l02">
+        <div class="l02-cube">
+          <svg viewBox="0 0 68 68" fill="none">
+            <polygon points="34,4 62,20 34,36 6,20" fill="#E9FE03"/>
+            <polygon points="6,20 34,36 34,60 6,44" fill="#2E2E2E"/>
+            <polygon points="62,20 34,36 34,60 62,44" fill="#686868"/>
+            <polyline points="34,4 6,20 34,36 62,20 34,4" stroke="#2E2E2E" stroke-width="1.5" fill="none"/>
+            <line x1="34" y1="36" x2="34" y2="60" stroke="#2E2E2E" stroke-width="1.5"/>
+            <line x1="6" y1="20" x2="6" y2="44" stroke="#2E2E2E" stroke-width="1.5"/>
+            <line x1="62" y1="20" x2="62" y2="44" stroke="#2E2E2E" stroke-width="1.5"/>
+            <polyline points="6,44 34,60 62,44" stroke="#2E2E2E" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="l02-tx">
+          <div class="l02-n">Phygital</div>
+          <div class="l02-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Плаский ізометричний куб без перспективних деформацій. Лимонна верхня грань = бренд, темні бокові = глибина рішення. Три площини: технологія + подія + результат. Куб у брендовому кольорі — символ готового продукту.</div>
+  </div>
+
+  <!-- 03 P monogram -->
+  <div class="cell">
+    <div class="meta"><span class="num">03</span><span class="cname">P Monogram · Unbounded<br>Лимонний блок + монограма</span></div>
+    <div class="stage">
+      <div class="l03">
+        <div class="l03-mark"><div class="l03-p">P</div></div>
+        <div class="l03-tx">
+          <div class="l03-n">Phygital</div>
+          <div class="l03-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Лимонний квадрат із монограмою P — перша буква стає символом бренду. Дуальна система: повний логотип для сайту + мінімальна монограма для аватарів, мерчу, стемпів. Unbounded Bold — максимальна впізнаваність.</div>
+  </div>
+
+  <!-- 04 Geometric intersection -->
+  <div class="cell">
+    <div class="meta"><span class="num">04</span><span class="cname">Geometric Mark · Два квадрати<br>Physical ∩ Digital</span></div>
+    <div class="stage">
+      <div class="l04">
+        <div class="l04-mark">
+          <svg viewBox="0 0 72 72" fill="none">
+            <rect x="4" y="4" width="40" height="40" fill="#E9FE03"/>
+            <rect x="28" y="28" width="40" height="40" fill="#2E2E2E"/>
+            <rect x="28" y="28" width="16" height="16" fill="#1A1A1A"/>
+            <rect x="32" y="32" width="8" height="8" fill="#E9FE03"/>
+          </svg>
+        </div>
+        <div class="l04-tx">
+          <div class="l04-n">Phygital</div>
+          <div class="l04-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Два квадрати що перекриваються = physical ∩ digital. Зона перетину — місце народження рішення. Лимонна точка в темному центрі = "момент активації події". Простий, але концептуально глибокий символ.</div>
+  </div>
+
+  <!-- 05 Nested squares dark -->
+  <div class="cell dk">
+    <div class="meta"><span class="num">05</span><span class="cname">Nested Squares · Dark<br>Три рівні вкладеності</span></div>
+    <div class="stage">
+      <div class="l05">
+        <div class="l05-badge">
+          <div class="l05-sq l05-sq1"></div>
+          <div class="l05-sq l05-sq2"></div>
+          <div class="l05-sq l05-sq3"></div>
+        </div>
+        <div class="l05-tx">
+          <div class="l05-n">Phy<span class="l05-ne">gital</span></div>
+          <div class="l05-s">Solution</div>
+          <div class="l05-tag">Interactive Event Tech</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Три вкладені квадрати — zoom-in до суті продукту. Центральний лимонний квадрат = точка готовності. Символ масштабується від 16px favicon до 6-метрового банера. Преміум dark-варіант для темного інтерфейсу та сценічних задників.</div>
+  </div>
+
+  <!-- 06 NEW — Pixel matrix box mark -->
+  <div class="cell">
+    <div class="meta"><span class="num">06</span><span class="cname">Pixel Box · Cabinet Grotesk<br>Піксельна матриця в коробці</span></div>
+    <div class="stage">
+      <div class="l06">
+        <div class="l06-mark">
+          <svg viewBox="0 0 70 70" fill="none">
+            <!-- Lemon square background -->
+            <rect x="0" y="0" width="70" height="70" fill="#E9FE03"/>
+            <!-- Dark border -->
+            <rect x="0" y="0" width="70" height="70" fill="none" stroke="#2E2E2E" stroke-width="3"/>
+            <!-- Pixel grid — 5×5 inside box, representing digital matrix -->
+            <!-- Row 1 -->
+            <rect x="11" y="11" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="21" y="11" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="31" y="11" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="41" y="11" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="51" y="11" width="8" height="8" fill="#2E2E2E"/>
+            <!-- Row 2 -->
+            <rect x="11" y="21" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="21" y="21" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="31" y="21" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="41" y="21" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="51" y="21" width="8" height="8" fill="#2E2E2E"/>
+            <!-- Row 3 -->
+            <rect x="11" y="31" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="21" y="31" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="31" y="31" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="41" y="31" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="51" y="31" width="8" height="8" fill="#2E2E2E"/>
+            <!-- Row 4 -->
+            <rect x="11" y="41" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="21" y="41" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="31" y="41" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="41" y="41" width="8" height="8" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+            <rect x="51" y="41" width="8" height="8" fill="#2E2E2E"/>
+            <!-- Row 5 -->
+            <rect x="11" y="51" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="21" y="51" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="31" y="51" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="41" y="51" width="8" height="8" fill="#2E2E2E"/>
+            <rect x="51" y="51" width="8" height="8" fill="#2E2E2E"/>
+          </svg>
+        </div>
+        <div class="l06-tx">
+          <div class="l06-n">Phygital</div>
+          <div class="l06-s">Solution</div>
+          <div class="l06-tag">Interactive Events · 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Піксельна матриця 5×5 у лимонній коробці — "цифровий простір в упаковці". Зовнішня рамка пікселів заповнена, внутрішня порожня з контуром — натяк на LED-дисплей готовий до активації. Cabinet Grotesk поєднує технологічність із сучасністю.</div>
+  </div>
+
+</div>
+
+
+<!-- ████████ SECTION 2: TYPOGRAPHIC WORDMARKS ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 2 — Типографічні Wordmark</div>
+  <div class="sh-sub">Лого без символу · Тільки текст · Сильна типографіка</div>
+</div>
+<div class="g2">
+
+  <!-- 07 Split PHY|GITAL FIXED -->
+  <div class="cell">
+    <div class="meta"><span class="num">07</span><span class="cname">Split Wordmark · Unbounded<br>PHY на лимонному + GITAL на темному</span></div>
+    <div class="stage">
+      <div class="l07">
+        <div class="l07-row1">
+          <span class="l07-phy">PHY</span>
+          <span class="l07-gital">GITAL</span>
+        </div>
+        <div class="l07-sol">SOLUTION</div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> "PHY" на лимонному + "GITAL" на темному — візуальна метафора physical × digital. Два блоки = два світи, що зустрічаються.</div>
+  </div>
+
+  <!-- 08 Stacked bold -->
+  <div class="cell">
+    <div class="meta"><span class="num">08</span><span class="cname">Stacked Bold · Syne<br>PHYGITAL + SOLUTION outline</span></div>
+    <div class="stage">
+      <div class="l08">
+        <div class="l08-l1">PHYGITAL</div>
+        <div class="l08-l2">SOLUTION</div>
+        <div class="l08-tag">Interactive Event Technology</div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Контраст ваги: заповнений темний рядок + лимонний outline. "PHYGITAL" — маса і впевненість, "SOLUTION" — світло і лимонний акцент. Чисто типографічне рішення без символу, максимальна читабельність на будь-якій поверхні.</div>
+  </div>
+
+  <!-- 09 Stacked line -->
+  <div class="cell">
+    <div class="meta"><span class="num">09</span><span class="cname">Stacked Line · Unbounded<br>Bold + Thin через лимонну лінію</span></div>
+    <div class="stage">
+      <div class="l09">
+        <div class="l09-l1">PHYGITAL</div>
+        <div class="l09-bar"></div>
+        <div class="l09-l2">SOLUTION</div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Лимонна горизонтальна лінія — сигнал, хвиля, підключення між фізичним і цифровим. Bold + thin Unbounded через розділювач. Максимальна читабельність, ідеальна пропорція для горизонтальних носіїв.</div>
+  </div>
+
+  <!-- 10 Barlow cube + SOLUTION outline -->
+  <div class="cell">
+    <div class="meta"><span class="num">10</span><span class="cname">Cube + Barlow Condensed<br>PHYGITAL + SOLUTION як рівні акценти</span></div>
+    <div class="stage">
+      <div class="l10">
+        <div class="l10-cube">
+          <svg viewBox="0 0 70 70" fill="none">
+            <polygon points="35,6 63,21 35,36 7,21" fill="#E9FE03"/>
+            <polygon points="7,21 35,36 35,60 7,45" fill="#2E2E2E"/>
+            <polygon points="63,21 35,36 35,60 63,45" fill="#484848"/>
+            <circle cx="35" cy="21" r="3.5" fill="#2E2E2E"/>
+          </svg>
+        </div>
+        <div class="l10-tx">
+          <div class="l10-n">PHYGITAL</div>
+          <div class="l10-s">SOLUTION</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Строгий куб без ліній обведень (три чисті площини) + Barlow Condensed. SOLUTION виписаний outline-лимонним — рівноцінний логотиповий акцент. Агресивний, технологічний, щільний.</div>
+  </div>
+
+</div>
+
+
+<!-- ████████ SECTION 3: BOX INSIDE WORD ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 3 — Коробка всередині слова</div>
+  <div class="sh-sub">Буква замінена знаком коробки · Нестандартна типографіка</div>
+</div>
+<div class="g2">
+
+  <!-- 11 Y=box FIXED -->
+  <div class="cell">
+    <div class="meta"><span class="num">11</span><span class="cname">Y = Лимонна коробка · Unbounded<br>Буква Y видима всередині знаку</span></div>
+    <div class="stage">
+      <div class="l11">
+        <div class="l11-row">
+          <span class="l11-lt">PH</span>
+          <div class="l11-ybox">
+            <span class="l11-yletter">Y</span>
+          </div>
+          <span class="l11-lt">GITAL</span>
+        </div>
+        <div class="l11-sol">Solution</div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Буква Y поміщена у лимонну коробку з темним обведенням — "коробка в назві". Y = точка розгалуження між фізичним і цифровим. Solution — повноцінна частина знаку.</div>
+  </div>
+
+  <!-- 12 O=box in SOLUTION -->
+  <div class="cell">
+    <div class="meta"><span class="num">12</span><span class="cname">O = Лимонна коробка у SOLUTION<br>Syne + графічний декор</span></div>
+    <div class="stage">
+      <div class="l12">
+        <div class="l12-top">Phygital</div>
+        <div class="l12-row">
+          <span class="l12-lt">S</span>
+          <div class="l12-obox"></div>
+          <span class="l12-lt">LUTION</span>
+        </div>
+        <div class="l12-deco">
+          <div class="l12-dline"></div>
+          <div class="l12-ddot"></div>
+          <div class="l12-dline" style="max-width:40px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> O у слові SOLUTION замінена лимонним квадратом — "рішення в коробці" буквально. Phygital — легкий підпис, SOLUTION — головний акцент. Лімонна лінія з точкою завершує композицію як маркер системи активації заходу.</div>
+  </div>
+
+
+
+
+</div>
+
+
+<!-- ████████ SECTION 4: DIGITAL / MATRIX ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 4 — Матриця · Сітка · Digital DNA</div>
+  <div class="sh-sub">Grid як візуальний елемент · Tech-естетика</div>
+</div>
+<div class="g2">
+
+  <!-- 14 Grid light + dark pair -->
+  <div class="cell sf">
+    <div class="meta"><span class="num">14A</span><span class="cname">Matrix Grid · Світлий фон<br>Лимонні активні клітини</span></div>
+    <div class="stage">
+      <div class="l14-wrap">
+        <div class="l14-gridbg" id="grid14"></div>
+        <div class="l14-content">
+          <div class="l14-ph">Phygital</div>
+          <div class="l14-sol">S<span>O</span>LUTION</div>
+          <div class="l14-tag">Interactive Event Technology</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція A — світлий варіант:</b> Прозора клітинна сітка як підложка = "цифровий простір заходу". Лимонні активні клітини = точки підключення в мережі. Phygital — супровідний підпис, SOLUTION — головний акцент великим шрифтом.</div>
+  </div>
+
+  <div class="cell dk">
+    <div class="meta"><span class="num">14B</span><span class="cname">Matrix Grid · Темний фон<br>Інверсія · Dark mode</span></div>
+    <div class="stage">
+      <div class="l15-wrap">
+        <div class="l15-gridbg" id="grid15"></div>
+        <div class="l15-content">
+          <div class="l15-ph">Phygital</div>
+          <div class="l15-sol">S<span>O</span>LUTION</div>
+          <div class="l15-tag">Interactive Event Technology</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція B — темний варіант:</b> Той самий логотип на темному фоні з лимонними grid-лініями. Ідеальний для сценічних задників, LED-екранів, dark-mode сайту та рекламних носіїв на вечірніх заходах.</div>
+  </div>
+
+  <!-- 15 Dark + Light grid code pair -->
+  <div class="cell span2">
+    <div class="meta"><span class="num">15</span><span class="cname">Dark Grid · Code Comment · // phygital.solution<br>Темний + Світлий варіанти</span></div>
+    <div class="stage" style="justify-content:center;gap:40px;flex-wrap:wrap;">
+      <!-- Dark version -->
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+        <div class="l16-wrap">
+          <div class="l16-gridlines" id="grid16"></div>
+          <div class="l16-content">
+            <div class="l16-comment">// phygital.solution</div>
+            <div class="l16-name">Phy<span>gital</span></div>
+            <div class="l16-div"></div>
+            <div class="l16-sol">Solution</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace;font-size:8.5px;color:#CCC;letter-spacing:.2em;text-transform:uppercase">Dark · Night events · LED walls</div>
+      </div>
+      <!-- Light version -->
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+        <div class="l16w-wrap">
+          <div class="l16w-gridlines" id="grid16w"></div>
+          <div class="l16w-content">
+            <div class="l16w-comment">// phygital.solution</div>
+            <div class="l16w-name">Phy<span>gital</span></div>
+            <div class="l16w-div"></div>
+            <div class="l16w-sol">Solution</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace;font-size:8.5px;color:#CCC;letter-spacing:.2em;text-transform:uppercase">Light · Print · Presentations</div>
+      </div>
+    </div>
+    <div class="desc"><b>Концепція:</b> Лимонні grid-лінії + code-comment `// phygital.solution` = цифрова ДНК бренду. Темний варіант — для LED-екранів, сценічних задників та нічних заходів. Світлий варіант — для презентацій, друку, сайту. Максимально tech-естетика.</div>
+  </div>
+
+</div>
+
+
+<!-- ████████ SECTION 5: BRAND SYSTEM ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 5 — Система бренду · 3 формати застосування</div>
+  <div class="sh-sub">Light · Dark · Favicon</div>
+</div>
+<div class="g2">
+
+  <div class="cell span2">
+    <div class="meta"><span class="num">SYS</span><span class="cname">Brand System · Єдиний знак у трьох форматах</span></div>
+    <div class="stage" style="justify-content:flex-start;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;align-items:center">
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="sa">
+            <div class="sa-box"></div>
+            <div>
+              <div class="sa-n">Phygital</div>
+              <div class="sa-n" style="font-size:16px;font-weight:400;color:#9A9A9A">Solution</div>
+              <div class="sa-s">Interactive Events</div>
+            </div>
+          </div>
+          <div class="sys-label">A — Стандарт (світлий фон)</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="sb">
+            <div class="sb-box"></div>
+            <div>
+              <div class="sb-n">Phygital</div>
+              <div class="sb-s">Solution</div>
+            </div>
+          </div>
+          <div class="sys-label">B — Dark mode / Задник сцени</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="sc">
+            <div class="sc-icon"><div class="sc-dot"></div></div>
+            <div class="sc-lbl">favicon<br>app icon<br>stamp</div>
+          </div>
+          <div class="sys-label">C — Compact / Favicon / Монограма</div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="desc"><b>Система бренду:</b> Єдиний знак коробки з вкладеними квадратами адаптується до будь-якого контексту — від 16px favicon до 6-метрового банера. Три обов'язкові варіанти: світлий, темний, компактний. Символ завжди читається і завжди впізнається незалежно від розміру та фону.</div>
+  </div>
+
+</div>
+
+
+<!-- ████████ SECTION 6: GEOMETRIC GRID LOGOS ████████ -->
+<div class="sh">
+  <div class="sh-title">Розділ 6 — Геометрична сітка як елемент логотипу</div>
+  <div class="sh-sub">Grid · Mesh · Pattern · 10 трендових стилів 2026</div>
+</div>
+<div class="g2">
+
+  <!-- G01 Dot grid -->
+  <div class="cell">
+    <div class="meta"><span class="num">G01</span><span class="cname">Dot Grid · Крапковий растр<br>Unbounded · Мінімалізм 2026</span></div>
+    <div class="stage">
+      <div class="g01-wrap">
+        <div class="g01-dots"></div>
+        <div class="g01-c">
+          <div class="g01-n">Phygital</div>
+          <div class="g01-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Dot Matrix.</b> Рівномірний крапковий растр як підложка — натяк на друковану плату, піксельний дисплей, цифровий простір. Текст поверх сітки виглядає "виринаючим" з цифрового середовища. Дуже актуально в brand design 2025–2026.</div>
+  </div>
+
+  <!-- G02 Triangle mesh -->
+  <div class="cell sf">
+    <div class="meta"><span class="num">G02</span><span class="cname">Triangle Mesh · Тригонометрична сітка<br>Syne · Polygon art style</span></div>
+    <div class="stage">
+      <div class="g02-wrap">
+        <svg class="g02-svg" viewBox="0 0 400 180" preserveAspectRatio="none">
+          <line x1="0" y1="90" x2="40" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="40" y1="0" x2="80" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="80" y1="90" x2="120" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="120" y1="0" x2="160" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="160" y1="90" x2="200" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="200" y1="0" x2="240" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="240" y1="90" x2="280" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="280" y1="0" x2="320" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="320" y1="90" x2="360" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="360" y1="0" x2="400" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="0" y1="90" x2="400" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="0" y1="90" x2="40" y2="180" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="40" y1="180" x2="80" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="80" y1="90" x2="120" y2="180" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="120" y1="180" x2="160" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="160" y1="90" x2="200" y2="180" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="200" y1="180" x2="240" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="240" y1="90" x2="280" y2="180" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="280" y1="180" x2="320" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="320" y1="90" x2="360" y2="180" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="360" y1="180" x2="400" y2="90" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="0" y1="90" x2="400" y2="90" stroke="#E9FE03" stroke-width="1.5" opacity=".5"/>
+          <polygon points="120,0 160,90 200,0" fill="#E9FE03" opacity=".4"/>
+          <polygon points="200,90 240,180 280,90" fill="#E9FE03" opacity=".3"/>
+        </svg>
+        <div class="g02-c">
+          <div class="g02-n">Phygital</div>
+          <div class="g02-s">Solution</div>
+          <div class="g02-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Polygon Mesh.</b> Тригонометрична сітка з виділеними лимонними трикутниками — low-poly art style, дуже популярний у tech-брендингу. Створює відчуття 3D-простору у пласкому дизайні. Динамічна та сучасна.</div>
+  </div>
+
+  <!-- G03 Hexagonal -->
+  <div class="cell">
+    <div class="meta"><span class="num">G03</span><span class="cname">Hexagonal Grid · Соти<br>Hex mark + Unbounded</span></div>
+    <div class="stage">
+      <div class="g03-wrap">
+        <svg class="g03-hex" viewBox="0 0 300 160" preserveAspectRatio="none">
+          <!-- Hex grid pattern -->
+          <polygon points="30,10 50,10 60,27 50,44 30,44 20,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="70,10 90,10 100,27 90,44 70,44 60,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="110,10 130,10 140,27 130,44 110,44 100,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="150,10 170,10 180,27 170,44 150,44 140,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="190,10 210,10 220,27 210,44 190,44 180,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="230,10 250,10 260,27 250,44 230,44 220,27" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="50,44 70,44 80,61 70,78 50,78 40,61" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="90,44 110,44 120,61 110,78 90,78 80,61" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="130,44 150,44 160,61 150,78 130,78 120,61" stroke="#E9FE03" stroke-width="2" fill="#E9FE03" opacity=".5"/>
+          <polygon points="170,44 190,44 200,61 190,78 170,78 160,61" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="210,44 230,44 240,61 230,78 210,78 200,61" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="50,78 70,78 80,95 70,112 50,112 40,95" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="90,78 110,78 120,95 110,112 90,112 80,95" stroke="#E9FE03" stroke-width="2" fill="#E9FE03" opacity=".3"/>
+          <polygon points="130,78 150,78 160,95 150,112 130,112 120,95" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="170,78 190,78 200,95 190,112 170,112 160,95" stroke="#2E2E2E" stroke-width="1" fill="none"/>
+          <polygon points="210,78 230,78 240,95 230,112 210,112 200,95" stroke="#E9FE03" stroke-width="2" fill="#E9FE03" opacity=".4"/>
+        </svg>
+        <div class="g03-c">
+          <div class="g03-mark"><div class="g03-mp">PS</div></div>
+          <div class="g03-tx">
+            <div class="g03-n">Phygital</div>
+            <div class="g03-s">Solution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Honeycomb Grid.</b> Гексагональна сітка = структура, система, технологічні соти. Шестикутна монограма PS + hex-фон створюють єдине технологічне середовище. Популярний у кіберпанк та defense-tech брендингу 2026.</div>
+  </div>
+
+  <!-- G04 Cross grid -->
+  <div class="cell">
+    <div class="meta"><span class="num">G04</span><span class="cname">Cross Grid · Хрестова сітка<br>Barlow Condensed · Тактильний стиль</span></div>
+    <div class="stage">
+      <div class="g04-wrap">
+        <div class="g04-crosses" id="crosses04"></div>
+        <div class="g04-c">
+          <div class="g04-n">PHYGITAL</div>
+          <div class="g04-s">SOLUTION</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Crosshair Grid.</b> Сітка з хрестів замість ліній — тактичний, військовий, картографічний стиль. Crosshair = прицільна сітка = точність рішення. Barlow Condensed дає агресивну щільність. Нестандартний, запам'ятовуваний.</div>
+  </div>
+
+  <!-- G05 Diagonal hatch dark -->
+  <div class="cell dk">
+    <div class="meta"><span class="num">G05</span><span class="cname">Diagonal Hatching · Dark<br>Штрихування · Industrial style</span></div>
+    <div class="stage">
+      <div class="g05-wrap">
+        <div class="g05-hatch"></div>
+        <div class="g05-c">
+          <div class="g05-tag">// event technology</div>
+          <div class="g05-n">Phygital</div>
+          <div class="g05-s">Solution</div>
+          <div class="g05-sub">Interactive Events · 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Industrial Hatch.</b> Діагональне штрихування на темному фоні — інженерний, промисловий, конструктивістський стиль. Натяк на технічні креслення, blueprint. Дуже трендово в 2025–2026 у рамках "Neo-Brutalism" та "Raw Tech" естетики.</div>
+  </div>
+
+  <!-- G06 Concentric squares SVG -->
+  <div class="cell">
+    <div class="meta"><span class="num">G06</span><span class="cname">Concentric Squares · Ехо-квадрати<br>Familjen Grotesk · Target style</span></div>
+    <div class="stage">
+      <div class="g06-wrap">
+        <div class="g06-mark">
+          <svg viewBox="0 0 80 80" fill="none">
+            <rect x="2" y="2" width="76" height="76" stroke="#E9FE03" stroke-width="2"/>
+            <rect x="12" y="12" width="56" height="56" stroke="#2E2E2E" stroke-width="1.5" opacity=".4"/>
+            <rect x="22" y="22" width="36" height="36" stroke="#2E2E2E" stroke-width="1.5" opacity=".25"/>
+            <rect x="32" y="32" width="16" height="16" stroke="#2E2E2E" stroke-width="1.5" opacity=".2"/>
+            <rect x="36" y="36" width="8" height="8" fill="#E9FE03"/>
+          </svg>
+        </div>
+        <div class="g06-tx">
+          <div class="g06-n">Phygital</div>
+          <div class="g06-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Target / Echo Grid.</b> Концентричні квадрати що затухають — ехо-сигнал, радар, пульсація. Лимонний зовнішній контур + лимонна центральна точка = "джерело і сигнал". Дуже медитативний і запам'ятовуваний символ для event-бренду.</div>
+  </div>
+
+
+  <!-- G08 Circuit board -->
+  <div class="cell sf">
+    <div class="meta"><span class="num">G08</span><span class="cname">Circuit Board Lines<br>Unbounded · PCB style</span></div>
+    <div class="stage">
+      <div class="g08-wrap">
+        <!-- Full-coverage PCB trace background -->
+        <svg class="g08-circuit" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+          <!-- Horizontal traces -->
+          <line x1="0"   y1="30"  x2="90"  y2="30"  stroke="#E9FE03" stroke-width="2" opacity=".22"/>
+          <line x1="130" y1="30"  x2="220" y2="30"  stroke="#E9FE03" stroke-width="2" opacity=".18"/>
+          <line x1="260" y1="30"  x2="400" y2="30"  stroke="#E9FE03" stroke-width="2" opacity=".14"/>
+          <line x1="0"   y1="70"  x2="60"  y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".16"/>
+          <line x1="100" y1="70"  x2="180" y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".20"/>
+          <line x1="220" y1="70"  x2="310" y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".12"/>
+          <line x1="350" y1="70"  x2="400" y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".16"/>
+          <line x1="0"   y1="160" x2="80"  y2="160" stroke="#E9FE03" stroke-width="2" opacity=".14"/>
+          <line x1="130" y1="160" x2="240" y2="160" stroke="#E9FE03" stroke-width="2" opacity=".18"/>
+          <line x1="290" y1="160" x2="400" y2="160" stroke="#E9FE03" stroke-width="2" opacity=".14"/>
+          <line x1="0"   y1="195" x2="50"  y2="195" stroke="#E9FE03" stroke-width="2" opacity=".10"/>
+          <line x1="100" y1="195" x2="200" y2="195" stroke="#E9FE03" stroke-width="2" opacity=".12"/>
+          <line x1="250" y1="195" x2="400" y2="195" stroke="#E9FE03" stroke-width="2" opacity=".10"/>
+          <!-- Vertical traces connecting horizontals -->
+          <line x1="90"  y1="30"  x2="90"  y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".20"/>
+          <line x1="60"  y1="70"  x2="60"  y2="30"  stroke="#E9FE03" stroke-width="2" opacity=".16"/>
+          <line x1="220" y1="30"  x2="220" y2="70"  stroke="#E9FE03" stroke-width="2" opacity=".16"/>
+          <line x1="310" y1="70"  x2="310" y2="160" stroke="#E9FE03" stroke-width="2" opacity=".12"/>
+          <line x1="80"  y1="160" x2="80"  y2="195" stroke="#E9FE03" stroke-width="2" opacity=".12"/>
+          <line x1="240" y1="160" x2="240" y2="195" stroke="#E9FE03" stroke-width="2" opacity=".14"/>
+          <line x1="350" y1="70"  x2="350" y2="160" stroke="#E9FE03" stroke-width="2" opacity=".12"/>
+          <line x1="130" y1="30"  x2="130" y2="160" stroke="#E9FE03" stroke-width="2" opacity=".10"/>
+          <!-- Pads (round solder joints at intersections) -->
+          <circle cx="90"  cy="30"  r="4.5" fill="#E9FE03" opacity=".50"/>
+          <circle cx="60"  cy="70"  r="4.5" fill="#E9FE03" opacity=".45"/>
+          <circle cx="220" cy="30"  r="4.5" fill="#E9FE03" opacity=".45"/>
+          <circle cx="220" cy="70"  r="4.5" fill="#E9FE03" opacity=".40"/>
+          <circle cx="310" cy="70"  r="4.5" fill="#E9FE03" opacity=".38"/>
+          <circle cx="310" cy="160" r="4.5" fill="#E9FE03" opacity=".38"/>
+          <circle cx="130" cy="30"  r="4.5" fill="#E9FE03" opacity=".35"/>
+          <circle cx="130" cy="160" r="4.5" fill="#E9FE03" opacity=".35"/>
+          <circle cx="80"  cy="160" r="4.5" fill="#E9FE03" opacity=".38"/>
+          <circle cx="80"  cy="195" r="4.5" fill="#E9FE03" opacity=".35"/>
+          <circle cx="240" cy="160" r="4.5" fill="#E9FE03" opacity=".38"/>
+          <circle cx="240" cy="195" r="4.5" fill="#E9FE03" opacity=".35"/>
+          <circle cx="350" cy="70"  r="4.5" fill="#E9FE03" opacity=".35"/>
+          <circle cx="350" cy="160" r="4.5" fill="#E9FE03" opacity=".35"/>
+          <!-- IC chip rectangle (right corner) -->
+          <rect x="340" y="170" width="52" height="40" fill="none" stroke="#E9FE03" stroke-width="1.5" opacity=".25"/>
+          <rect x="346" y="176" width="40" height="28" fill="none" stroke="#E9FE03" stroke-width="1" opacity=".15"/>
+          <!-- Small component pads on IC -->
+          <rect x="340" y="178" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+          <rect x="340" y="185" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+          <rect x="340" y="192" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+          <rect x="387" y="178" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+          <rect x="387" y="185" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+          <rect x="387" y="192" width="5" height="3" fill="#E9FE03" opacity=".30"/>
+        </svg>
+        <div class="g08-c">
+          <div class="g08-n">Phygital</div>
+          <div class="g08-bar"></div>
+          <div class="g08-s">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: PCB / Circuit.</b> Схеми друкованої плати як декоративний фон — лімонні доріжки, вузли-паяння та корпус мікросхеми. Нагадує про мікроелектроніку, smart-технології, IoT. Дуже сучасно для tech-event бренду, що займається інтерактивними інсталяціями.</div>
+  </div>
+
+  <!-- G09 Isometric grid floor lemon -->
+  <div class="cell yl">
+    <div class="meta"><span class="num">G09</span><span class="cname">Isometric Floor Grid · Лимонний фон<br>Просторова сітка як підлога</span></div>
+    <div class="stage">
+      <div class="g09-wrap">
+        <svg class="g09-iso" viewBox="0 0 320 160" preserveAspectRatio="none">
+          <!-- Isometric grid lines -->
+          <line x1="0" y1="80" x2="160" y2="0" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="40" y1="100" x2="200" y2="20" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="80" y1="120" x2="240" y2="40" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="120" y1="140" x2="280" y2="60" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="160" y1="160" x2="320" y2="80" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="0" y1="80" x2="160" y2="160" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="40" y1="60" x2="200" y2="140" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="80" y1="40" x2="240" y2="120" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="120" y1="20" x2="280" y2="100" stroke="#2E2E2E" stroke-width="1"/>
+          <line x1="160" y1="0" x2="320" y2="80" stroke="#2E2E2E" stroke-width="1"/>
+        </svg>
+        <div class="g09-c">
+          <div class="g09-box"><div class="g09-bp">P</div></div>
+          <div class="g09-tx">
+            <div class="g09-n">Phygital</div>
+            <div class="g09-s">Solution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Isometric Floor.</b> Ізометрична сітка як "підлога простору" — відчуття 3D-середовища у пласкому дизайні. Лимонний фон = активне поле, P-монограма на темному = якорний знак. Підходить для виставкових стендів та шоу-флорів.</div>
+  </div>
+
+  <!-- G10 Waveform / Signal bars -->
+  <div class="cell dk">
+    <div class="meta"><span class="num">G10</span><span class="cname">Waveform · Signal Grid · Темний<br>Частота сигналу події · Syne</span></div>
+    <div class="stage">
+      <div class="g10-wrap">
+        <div class="g10-mark">
+          <svg viewBox="0 0 80 80" fill="none">
+            <!-- Waveform bars — EQ/signal style, ascending from left then descending -->
+            <!-- Bar heights: 4,8,16,28,40,52,64,52,40,28 — symmetric wave shape -->
+            <rect x="4"  y="68" width="5" height="8"  fill="#E9FE03"/>
+            <rect x="11" y="62" width="5" height="14" fill="#E9FE03"/>
+            <rect x="18" y="52" width="5" height="24" fill="#E9FE03"/>
+            <rect x="25" y="38" width="5" height="38" fill="#E9FE03"/>
+            <rect x="32" y="20" width="5" height="56" fill="#E9FE03"/>
+            <rect x="39" y="10" width="5" height="66" fill="#E9FE03" opacity=".9"/>
+            <rect x="46" y="20" width="5" height="56" fill="#E9FE03"/>
+            <rect x="53" y="38" width="5" height="38" fill="#E9FE03"/>
+            <rect x="60" y="52" width="5" height="24" fill="#E9FE03"/>
+            <rect x="67" y="62" width="5" height="14" fill="#E9FE03"/>
+            <!-- Baseline -->
+            <line x1="4" y1="76" x2="76" y2="76" stroke="#E9FE03" stroke-width="1" opacity=".3"/>
+            <!-- Small lemon square accent top-right -->
+            <rect x="60" y="4" width="12" height="12" fill="#E9FE03" opacity=".25"/>
+            <rect x="63" y="7" width="6" height="6" fill="#E9FE03" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="g10-tx">
+          <div class="g10-n">Phygital</div>
+          <div class="g10-s">Solution</div>
+          <div class="g10-tag">Interactive Events</div>
+        </div>
+      </div>
+    </div>
+    <div class="desc"><b>Тренд: Waveform / EQ.</b> Симетрична хвиля сигналу — еквалайзер, аудіо, частота заходу. Лимонні вертикальні бари на темному = "рівень активності події". Нейтральна та сучасна технологічна асоціація: музика, медіа, live-стрімінг, інтерактив.</div>
+  </div>
+
+</div>
+
+
+<!-- ████████ PALETTE ████████ -->
+<div class="palette">
+  <div class="pal-title">Фірмова палітра кольорів · Phygital Solution</div>
+  <div class="pal-row">
+    <div class="sw">
+      <div class="sw-c" style="background:#E9FE03"></div>
+      <div>
+        <div class="sw-name">Lemon</div>
+        <div class="sw-hex">#E9FE03</div>
+        <div class="sw-use">Акцент · Коробка<br>Куб-верхівка · CTA<br>Активні клітини сітки</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-c" style="background:#2E2E2E"></div>
+      <div>
+        <div class="sw-name">Dark</div>
+        <div class="sw-hex">#2E2E2E</div>
+        <div class="sw-use">Основний · Текст<br>Темний фон · Символ<br>Тіньові грані куба</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-c" style="background:#FFFFFF;border:1px solid #333"></div>
+      <div>
+        <div class="sw-name">White</div>
+        <div class="sw-hex">#FFFFFF</div>
+        <div class="sw-use">Фон · Текст на темному<br>Негативний простір<br>Контраст символу</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-c" style="background:#8A8A8A"></div>
+      <div>
+        <div class="sw-name">Mid Grey</div>
+        <div class="sw-hex">#8A8A8A</div>
+        <div class="sw-use">Solution (light weight)<br>Tagline · Метадані<br>Вторинний текст</div>
+      </div>
+    </div>
+    <div class="sw">
+      <div class="sw-c" style="background:#F4F4F1;border:1px solid #DDD"></div>
+      <div>
+        <div class="sw-name">Off-White</div>
+        <div class="sw-hex">#F4F4F1</div>
+        <div class="sw-use">Фонові секції<br>М'який контраст<br>Картки та плашки</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="ft">Phygital Solution · Мастер-файл логотипів · 2026</div>
+  <div class="ft">27 концепцій · 6 розділів · Flat SVG · Web-first</div>
+  <div class="ft">#E9FE03 Lemon · #2E2E2E Dark</div>
+</div>
+
+<script>
+// Grid 14 light cells
+(function(){
+  const el=document.getElementById('grid14');if(!el)return;
+  const lit=new Set([3,10,22,35,48,55,67,71,82,91]);
+  for(let i=0;i<98;i++){
+    const d=document.createElement('div');
+    d.className='l14-gc'+(lit.has(i)?' lit':'');
+    el.appendChild(d);
+  }
+})();
+
+// Grid 15 dark cells
+(function(){
+  const el=document.getElementById('grid15');if(!el)return;
+  const lit=new Set([5,18,30,44,57,62,74,80,88,95]);
+  for(let i=0;i<98;i++){
+    const d=document.createElement('div');
+    d.className='l15-gc'+(lit.has(i)?' lit':'');
+    el.appendChild(d);
+  }
+})();
+
+// Grid 16 lines
+(function(){
+  const el=document.getElementById('grid16');if(!el)return;
+  for(let i=1;i<7;i++){
+    const h=document.createElement('div');h.className='l16-hl';h.style.top=(i*100/7)+'%';el.appendChild(h);
+  }
+  for(let i=1;i<9;i++){
+    const v=document.createElement('div');v.className='l16-vl';v.style.left=(i*100/9)+'%';el.appendChild(v);
+  }
+})();
+
+// Grid 16 white variant
+(function(){
+  const el=document.getElementById('grid16w');if(!el)return;
+  for(let i=1;i<7;i++){
+    const h=document.createElement('div');h.className='l16w-hl';h.style.top=(i*100/7)+'%';el.appendChild(h);
+  }
+  for(let i=1;i<9;i++){
+    const v=document.createElement('div');v.className='l16w-vl';v.style.left=(i*100/9)+'%';el.appendChild(v);
+  }
+})();
+
+// G04 cross grid
+(function(){
+  const el=document.getElementById('crosses04');if(!el)return;
+  const pw=el.offsetWidth||360,ph=el.offsetHeight||200;
+  const step=28;
+  for(let x=step;x<pw;x+=step){
+    for(let y=step;y<ph;y+=step){
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('width','12');svg.setAttribute('height','12');
+      svg.style.cssText=`position:absolute;left:${x-6}px;top:${y-6}px;opacity:.1`;
+      svg.innerHTML=`<line x1="6" y1="0" x2="6" y2="12" stroke="#2E2E2E" stroke-width="1"/><line x1="0" y1="6" x2="12" y2="6" stroke="#2E2E2E" stroke-width="1"/>`;
+      el.appendChild(svg);
+    }
+  }
+})();
+
+
+</script>
+</body>
+</html>
